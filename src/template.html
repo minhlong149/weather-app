@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather</title>
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="side-bar">
+      <div class="side-bar__location location">
+        <button class="location__btn location__btn--search">
+          Seach for places
+        </button>
+        <button class="location__btn location__btn--crosshair">
+          <span class="material-icons">my_location</span>
+        </button>
+      </div>
+
+      <div class="side-bar__today today">
+        <img src="./asset/Clear.png" alt="" class="today__icon" />
+        <div class="today__temp">15C</div>
+        <div class="today__cond">Shower</div>
+      </div>
+
+      <div class="side-bar__info">  
+        <div class="info__date">Today - Fri, 5 June</div>
+        <span class="material-icons">location_on</span>
+        <span class="info__name">Tokyo</span>
+      </div>
+    </div>
+
+    <div class="main">
+      <div class="main__units units">
+        <button class="units__btn units__btn--metric">C</button>
+        <button class="units__btn units__btn--imperial">F</button>
+      </div>
+
+      <div class="main__forecast forecast">
+        <div class="forecast__day day">
+          <span class="day__date">Tomorrow</span>
+          <img src="./asset/Hail.png" alt="" class="day__icon" />
+          <div class="day_temp temp">
+            <span class="temp--min">35</span>
+            <span class="temp--max">39</span>
+          </div>
+        </div>
+
+        <div class="forecast__day day">
+          <span class="day__date"></span>
+          <img src="" alt="" class="day__icon" />
+          <div class="day_temp temp">
+            <span class="temp--min"></span>
+            <span class="temp--max"></span>
+          </div>
+        </div>
+
+        <div class="forecast__day day">
+          <span class="day__date"></span>
+          <img src="" alt="" class="day__icon" />
+          <div class="day_temp temp">
+            <span class="temp--min"></span>
+            <span class="temp--max"></span>
+          </div>
+        </div>
+
+        <div class="forecast__day day">
+          <span class="day__date"></span>
+          <img src="" alt="" class="day__icon" />
+          <div class="day_temp temp">
+            <span class="temp--min"></span>
+            <span class="temp--max"></span>
+          </div>
+        </div>
+
+        <div class="forecast__day day">
+          <span class="day__date"></span>
+          <img src="" alt="" class="day__icon" />
+          <div class="day_temp temp">
+            <span class="temp--min"></span>
+            <span class="temp--max"></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="main__highlight highlight">
+        <div class="highlight__wind">
+          <div class="highlight--title">Wind status</div>
+          <div class="highlight--value">7</div>
+          <div class="highlight__wind--dir dir">
+            <span class="material-icons dir__value">navigation</span>
+            <span class="dir__name">WSW</span>
+          </div>
+        </div>
+
+        <div class="highlight__humid">
+          <div class="highlight--title">Humidity</div>
+          <div class="highlight--value">84</div>
+          <progress
+            class="highlight__humid--bar"
+            max="100"
+            value="70"
+          ></progress>
+        </div>
+
+        <div class="highlight__vis">
+          <div class="highlight--title">Visibility</div>
+          <div class="highlight--value">6,4 miles</div>
+        </div>
+
+        <div class="highlight__air">
+          <div class="highlight--title">Air Pressure</div>
+          <div class="highlight--value">998 mb </div>
+        </div>
+      </div>
+
+      <footer>
+        Created by <a href="https://github.com/minhlong149">Long</a> -
+        <a href="https://devchallenges.io/">DevChallenges</a> &
+        <a href="https://www.theodinproject.com/">The Odin Project</a>
+      </footer>
+    </div>
+  </body>
+</html>
