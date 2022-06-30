@@ -1,1 +1,14 @@
 @forward "./reset";
+@forward "./color";
+@forward "./typo";
+
+@forward "./sidebar";
+
+body {
+  height: 100vh;
+  display: flex;
+  
+  > * {
+    flex-grow: 1;
+  }
+}

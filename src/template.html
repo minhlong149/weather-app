@@ -5,14 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Weather</title>
-    <link
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet"
-    />
+    <link rel="stylesheet" href="../dist/css/style.css" />
   </head>
+
   <body>
-    <div class="side-bar">
-      <div class="side-bar__location location">
+    <div class="sidebar">
+      <div class="sidebar__location location">
         <button class="location__btn location__btn--search">
           Seach for places
         </button>
@@ -21,16 +19,20 @@
         </button>
       </div>
 
-      <div class="side-bar__today today">
-        <img src="./asset/Clear.png" alt="" class="today__icon" />
-        <div class="today__temp">15C</div>
+      <div class="sidebar__today today">
+        <div class="today__icon">
+          <img src="./asset/Clear.png" alt=""/>
+        </div>
+        <div class="today__temp">15</div>
         <div class="today__cond">Shower</div>
       </div>
 
-      <div class="side-bar__info">  
-        <div class="info__date">Today - Fri, 5 June</div>
-        <span class="material-icons">location_on</span>
-        <span class="info__name">Tokyo</span>
+      <div class="sidebar__info info">
+        <div class="info__date">Today • Fri, 5 June</div>
+        <div class="info__name">
+          <span class="material-icons">location_on</span>
+          <span class="info__name--city">Tokyo</span>
+        </div>
       </div>
     </div>
 
@@ -114,7 +116,7 @@
 
         <div class="highlight__air">
           <div class="highlight--title">Air Pressure</div>
-          <div class="highlight--value">998 mb </div>
+          <div class="highlight--value">998 mb</div>
         </div>
       </div>
 
