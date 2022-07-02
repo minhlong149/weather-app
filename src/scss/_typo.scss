@@ -1,6 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Raleway');
-@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;700");
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
 
-body, * {
-  font-family: 'Raleway', sans-serif;
+body,
+* {
+  font-family: "Raleway", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
 }
