@@ -82,7 +82,9 @@ body {
     font-weight: 700;
     font-size: 24px;
     color: #e7e7eb;
+    // padding: 1em 0;
   }
+
   &__highlight {
     display: flex;
     justify-content: space-between;
@@ -96,15 +98,45 @@ body {
   width: 45%;
   background: #1e213a;
 
-  padding: 1em 0;
+  padding: 2em 0;
 
   &__value {
     font-weight: 700;
     font-size: 64px;
+    padding: 1rem 0;
+
+    &::after {
+      font-weight: 500;
+      font-size: 36px;
+    }
+
+    &--wind::after {
+      content: "mps";
+    }
+
+    &--humid::after {
+      content: "%";
+    }
+
+    &--air::after {
+      content: "mb";
+    }
   }
 
-  > * {
-    margin: 1rem 0;
+  progress {
+    appearance: none;
+    width: 80%;
+    height: 0.5em;
+
+    &::-webkit-progress-bar {
+      background: #e7e7eb;
+      border-radius: 1em;
+    }
+
+    &[value]::-webkit-progress-value {
+      background: #ffec65;
+      border-radius: 1em;
+    }
   }
 }
 
