@@ -3,7 +3,7 @@
   flex-direction: column;
   justify-content: space-between;
 
-  max-width: 30vw;
+  width: 30vw;
 
   &__location {
     display: flex;
@@ -91,13 +91,17 @@
     font-size: 36px;
     color: #a09fb1;
   }
+
+  .temp {
+    &__unit {
+      font-size: 48px;
+      color: #a09fb1;
+    }
+  }
 }
 
 .temp {
   &__unit {
-    font-size: 48px;
-    color: #a09fb1;
-
     &::before {
       content: "°";
     }

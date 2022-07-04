@@ -37,9 +37,7 @@
 
     <div class="main">
       <div class="main__units units">
-        <button class="units__btn units__btn--metric units__btn--active">
-          C
-        </button>
+        <button class="units__btn units__btn--metric units__btn--active">C</button>
         <button class="units__btn units__btn--imperial">F</button>
       </div>
 
@@ -47,55 +45,75 @@
         <div class="forecast__day day">
           <span class="day__date">Tomorrow</span>
           <div class="day__icon">
-            <img src="./asset/Hail.png" alt=""/>
+            <img src="./asset/Hail.png" alt="" />
           </div>
-          <div class="day_temp temp">
-            <span class="temp--min">35</span>
-            <span class="temp--max">39</span>
+          <div class="day__temp temp">
+            <div class="temp temp--min">
+              <span class="temp__value">15</span><span class="temp__unit">C</span>
+            </div>
+            <div class="temp--max">              
+              <span class="temp__value">15</span><span class="temp__unit">C</span>
+            </div>
           </div>
         </div>
 
         <div class="forecast__day day">
           <span class="day__date">Sun, 7 Jun</span>
           <div class="day__icon">
-            <img src="./asset/HeavyCloud.png" alt=""/>
+            <img src="./asset/HeavyCloud.png" alt="" />
           </div>
-          <div class="day_temp temp">
-            <span class="temp--min">31</span>
-            <span class="temp--max">34</span>
-          </div>
-        </div>
-
-        <div class="forecast__day day">
-          <span class="day__date"></span>
-          <div class="day__icon">
-            <img src="./asset/LightRain.png" alt=""/>
-          </div>
-          <div class="day_temp temp">
-            <span class="temp--min">35</span>
-            <span class="temp--max">38</span>
+          <div class="day__temp">
+            <div class="temp temp--min">
+              <span class="temp__value">15</span><span class="temp__unit">C</span>
+            </div>
+            <div class="temp--max">              
+              <span class="temp__value">15</span><span class="temp__unit">C</span>
+            </div>
           </div>
         </div>
 
         <div class="forecast__day day">
-          <span class="day__date"></span>
+          <span class="day__date">Tue, 9 Jun</span>
           <div class="day__icon">
-            <img src="./asset/Shower.png" alt=""/>
+            <img src="./asset/LightRain.png" alt="" />
           </div>
-          <div class="day_temp temp">
-            <span class="temp--min">36</span>
-            <span class="temp--max">39</span>
+          <div class="day__temp temp">
+            <div class="temp temp--min">
+              <span class="temp__value">15</span><span class="temp__unit">C</span>
+            </div>
+            <div class="temp--max">              
+              <span class="temp__value">15</span><span class="temp__unit">C</span>
+            </div>
           </div>
         </div>
 
         <div class="forecast__day day">
-          <span class="day__date"></span>
+          <span class="day__date">Wed, 10 Jun</span>
           <div class="day__icon">
-            <img src="./asset/Snow.png" alt=""/>
+            <img src="./asset/Shower.png" alt="" />
           </div>
-          <div class="day_temp temp">
-            <span class="temp--min"></span>
-            <span class="temp--max"></span>
+          <div class="day__temp temp">
+            <div class="temp temp--min">
+              <span class="temp__value">15</span><span class="temp__unit">C</span>
+            </div>
+            <div class="temp--max">              
+              <span class="temp__value">15</span><span class="temp__unit">C</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="forecast__day day">
+          <span class="day__date">Mon, 8 Jun</span>
+          <div class="day__icon">
+            <img src="./asset/Snow.png" alt="" />
+          </div>
+          <div class="day__temp temp">
+            <div class="temp temp--min">
+              <span class="temp__value">15</span><span class="temp__unit">C</span>
+            </div>
+            <div class="temp--max">              
+              <span class="temp__value">15</span><span class="temp__unit">C</span>
+            </div>
           </div>
         </div>
       </div>
@@ -103,30 +121,33 @@
       <div class="main__content content">
         <h1 class="content__title">Today’s Hightlights</h1>
         <div class="content__highlight">
-
-          <div class="highlight highlight--wind">
+          <div class="highlight highlight--big highlight--wind">
             <div class="highlight__title">Wind status</div>
-            <div class="highlight__value">7</div>
+            <div class="highlight__value highlight__value--wind">7</div>
             <div class="highlight--wind__dir dir">
               <span class="material-icons dir__value">navigation</span>
               <span class="dir__name">WSW</span>
             </div>
           </div>
 
-          <div class="highlight highlight--humid">
+          <div class="highlight highlight--big highlight--humid">
             <div class="highlight__title">Humidity</div>
-            <div class="highlight__value">84</div>
-            <progress class="highlight--humid__bar" max="100" value="70"></progress>
+            <div class="highlight__value highlight__value--humid">84</div>
+            <progress
+              class="highlight--humid__bar"
+              max="100"
+              value="70"
+            ></progress>
           </div>
 
-          <div class="highlight highlight--vis">
+          <div class="highlight highlight--small highlight--vis">
             <div class="highlight__title">Visibility</div>
-            <div class="highlight__value">6,4 miles</div>
+            <div class="highlight__value highlight__value--vis">6,4</div>
           </div>
 
-          <div class="highlight highlight--air">
+          <div class="highlight highlight--small highlight--air">
             <div class="highlight__title">Air Pressure</div>
-            <div class="highlight__value">998 mb</div>
+            <div class="highlight__value highlight__value--air">998</div>
           </div>
         </div>
       </div>

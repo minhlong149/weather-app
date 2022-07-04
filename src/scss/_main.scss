@@ -1,19 +1,16 @@
 body {
   height: 100vh;
   display: flex;
-
-  > * {
-    flex-grow: 1;
-  }
 }
 
 .main {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  gap: 1em;
 
   width: 70vw;
-  margin: 0 5em;
+  padding: 5% 10%;
 
   &__units {
     align-self: end;
@@ -58,22 +55,47 @@ body {
 
 .forecast {
   &__day {
-    background: #1e213a;
-
-    > * {
-      display: block;
-    }
-
-    width: 120px;
-    height: 200px;
-
-    img {
-      max-width: 100%;
-      max-height: 80%;
-    }
-
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 120px;
+    height: 177px;
+
+    background: #1e213a;
+  }
+}
+
+.day {
+  &__date {
+    padding-top: 1em;
+  }
+
+  &__icon {
+    max-width: 80px;
+    max-height: 80px;
+
+    // background-color: #fff;
+
+    img {
+      max-height: 100%;
+      max-width: 100%;
+      // object-fit: contain;
+    }
+    // padding: 1em;
+  }
+
+  &__temp {
+    align-self: stretch;
+    padding-bottom: 1em;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-evenly;
+
+    .temp--min {
+      color: #a09fb1;
+    }
   }
 }
 
@@ -82,7 +104,7 @@ body {
     font-weight: 700;
     font-size: 24px;
     color: #e7e7eb;
-    // padding: 1em 0;
+    padding: 0.4em 0 .8em;
   }
 
   &__highlight {
@@ -94,11 +116,11 @@ body {
 }
 
 .highlight {
+  width: 48.7%;
   text-align: center;
-  width: 45%;
   background: #1e213a;
 
-  padding: 2em 0;
+  padding: 1.5em 0 1.5em;
 
   &__value {
     font-weight: 700;
@@ -118,25 +140,31 @@ body {
       content: "%";
     }
 
+    &--vis::after {
+      content: "m";
+    }
+
     &--air::after {
       content: "mb";
     }
   }
+}
 
-  progress {
-    appearance: none;
-    width: 80%;
-    height: 0.5em;
+progress {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  width: 80%;
+  height: 0.5em;
 
-    &::-webkit-progress-bar {
-      background: #e7e7eb;
-      border-radius: 1em;
-    }
+  &::-webkit-progress-bar {
+    background: #e7e7eb;
+    border-radius: 1em;
+  }
 
-    &[value]::-webkit-progress-value {
-      background: #ffec65;
-      border-radius: 1em;
-    }
+  &[value]::-webkit-progress-value {
+    background: #ffec65;
+    border-radius: 1em;
   }
 }
 
