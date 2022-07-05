@@ -61,21 +61,21 @@
   &__icon {
     text-align: center;
     width: 100%;
-    z-index: 0;
-    position: relative;
+    // z-index: 0;
+    // position: relative;
 
-    &::before {
-      content: "";
-      background: no-repeat center url("../../src/asset/Cloud-background.png");
-      background-size: contain;
+    // &::before {
+    //   content: "";
+    //   background: no-repeat center url("../../src/asset/Cloud-background.png");
+    //   background-size: contain;
 
-      position: absolute;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      opacity: 0.8;
-      z-index: -1;
-    }
+    //   position: absolute;
+    //   left: 0;
+    //   width: 100%;
+    //   height: 100%;
+    //   opacity: 0.8;
+    //   z-index: -1;
+    // }
 
     img {
       max-width: 100%;
