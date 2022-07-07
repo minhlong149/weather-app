@@ -10,12 +10,12 @@
       Design File
     </a>
     <span> | </span>
-    <a href="https://{your-url-to-the-solution}">
+    <a href="https://github.com/minhlong149/weather-app">
       Code Solution
     </a>
     </a>
     <span> | </span>
-    <a href="https://{your-demo-link.your-domain}">
+    <a href="https://minhlong149.github.io/weather-app/">
      Live Demo
   </h3>
 </div>
