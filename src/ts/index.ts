@@ -1,5 +1,6 @@
 import "../scss/style.scss"
 import  { updateWeather, updateForecast } from "./data"
 
-updateWeather("London");
-updateForecast("London")
+const city = "Bien Hoa"
+updateWeather(city);
+updateForecast(city);

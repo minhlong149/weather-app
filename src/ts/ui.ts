@@ -25,12 +25,14 @@ function updateIcon(icon: string) {
   _icon.src = `http://openweathermap.org/img/wn/${icon}@4x.png`;
 }
 
-function updateWindStatus(windSpeed: string, windDegree: number) {
+function updateWindStatus(windSpeed: string) {
   const _windSpeed = document.querySelector(
     ".highlight__value--wind"
   ) as HTMLElement;
   _windSpeed.innerText = windSpeed;
+}
 
+function updateWindDegree(windDegree: number) {
   const cardinalPoint = [
     "N",
     "NNE",
@@ -52,7 +54,11 @@ function updateWindStatus(windSpeed: string, windDegree: number) {
   const direction = Math.round(windDegree / (360 / cardinalPoint.length));
   const _windDegree = document.querySelector(".dir__name") as HTMLElement;
   _windDegree.innerText = cardinalPoint[direction % cardinalPoint.length];
+
+  const dirIcon = document.querySelector(".dir__value") as HTMLElement;
+  dirIcon.style.transform = `rotate(${windDegree}deg)`;
 }
+
 
 function updateHumidity(humidity: string) {
   const _humidity = document.querySelector(
@@ -87,6 +93,7 @@ export {
   updateCondition,
   updateIcon,
   updateWindStatus,
+  updateWindDegree,
   updateHumidity,
   updateVisibility,
   updatePressure,

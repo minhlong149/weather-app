@@ -5,6 +5,7 @@ import {
   updateCondition,
   updateIcon,
   updateWindStatus,
+  updateWindDegree,
   updateHumidity,
   updateVisibility,
   updatePressure,
@@ -90,7 +91,8 @@ function updateWeatherUI(currentWeather: Weather) {
   updateTemperature(currentWeather.temp.toString());
   updateCondition(currentWeather.condition);
   updateIcon(currentWeather.icon);
-  updateWindStatus(currentWeather.wind.speed, currentWeather.wind.deg);
+  updateWindStatus(currentWeather.wind.speed);
+  updateWindDegree(currentWeather.wind.deg);
   updateHumidity(currentWeather.humidity);
   updateVisibility(currentWeather.visibility);
   updatePressure(currentWeather.pressure);
