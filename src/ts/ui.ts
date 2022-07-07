@@ -19,9 +19,7 @@ function updateCondition(condition: string) {
 }
 
 function updateIcon(icon: string) {
-  const _icon = document.querySelector(
-    ".today__icon--img"
-  ) as HTMLImageElement;
+  const _icon = document.querySelector(".today__icon--img") as HTMLImageElement;
   _icon.src = `http://openweathermap.org/img/wn/${icon}@4x.png`;
 }
 
@@ -59,7 +57,6 @@ function updateWindDegree(windDegree: number) {
   dirIcon.style.transform = `rotate(${windDegree}deg)`;
 }
 
-
 function updateHumidity(humidity: string) {
   const _humidity = document.querySelector(
     ".highlight__value--humid"
@@ -86,6 +83,31 @@ function updatePressure(pressure: string) {
   _pressure.innerText = pressure;
 }
 
+function getForecastDays() {
+  const forecastDays = document.querySelectorAll(".forecast__day");
+  return forecastDays;
+}
+
+function updateForecastDate(forecastBlock: Element, dateTime: string) {
+  const _dateTime = forecastBlock.querySelector(".day__date") as HTMLElement;
+  _dateTime.innerText = dateTime;
+}
+
+function updateMinTemperature(forecastBlock: Element, temperature: string) {
+  const _minTemperature = forecastBlock.querySelector(".temp__value--min") as HTMLElement;
+  _minTemperature.innerText = temperature;
+}
+
+function updateMaxTemperature(forecastBlock: Element, temperature: string) {
+  const _temperature = forecastBlock.querySelector(".temp__value--max") as HTMLSpanElement;
+  _temperature.innerText = temperature;
+}
+
+function updateForecastIcon(forecastBlock: Element, icon: string) {
+  const _icon = forecastBlock.querySelector(".day__icon--img") as HTMLImageElement;
+  _icon.src = `http://openweathermap.org/img/wn/${icon}@2x.png`;
+}
+
 export {
   updateCityName,
   updateDate,
@@ -97,4 +119,9 @@ export {
   updateHumidity,
   updateVisibility,
   updatePressure,
+  getForecastDays,
+  updateForecastDate,
+  updateMinTemperature,
+  updateMaxTemperature,
+  updateForecastIcon,
 };

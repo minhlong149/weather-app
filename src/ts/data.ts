@@ -9,6 +9,11 @@ import {
   updateHumidity,
   updateVisibility,
   updatePressure,
+  getForecastDays,
+  updateForecastDate,
+  updateMinTemperature,
+  updateMaxTemperature,
+  updateForecastIcon,
 } from "./ui";
 
 interface Weather {
@@ -16,7 +21,7 @@ interface Weather {
   dateTime: string;
   temp: number;
   condition: string;
-  icon:string;
+  icon: string;
   wind: {
     speed: string;
     deg: number;
@@ -28,7 +33,7 @@ interface Weather {
 
 interface Forecast {
   dateTime: string;
-  condition: string;
+  icon: string;
   temp_min: string;
   temp_max: string;
 }
@@ -72,16 +77,14 @@ async function updateWeather(cityName: string) {
 
 async function updateForecast(cityName: string) {
   const forecastData = await getForecast(cityName);
-  const currentForecast: Forecast[] = [
-    forecastData.list
-      .filter((list: any, index: number) => index % 8 === 0)
-      .map((list: any) => ({
-        dateTime: setDate(new Date(list.dt * 1000)),
-        condition: list.weather[0].main,
-        temp_min: Math.round(list.main.temp_min),
-        temp_max: Math.round(list.main.temp_max),
-      })),
-  ];
+  const currentForecast: Forecast[] = forecastData.list
+    .filter((list: any, index: number) => index % 8 === 5)
+    .map((list: any) => ({
+      dateTime: setDate(new Date(list.dt * 1000)),
+      icon: list.weather[0].icon,
+      temp_min: Math.round(list.main.temp_min),
+      temp_max: Math.round(list.main.temp_max),
+    }));
   updateForecastUI(currentForecast);
 }
 
@@ -98,7 +101,13 @@ function updateWeatherUI(currentWeather: Weather) {
   updatePressure(currentWeather.pressure);
 }
 function updateForecastUI(currentForecast: Forecast[]) {
-  console.log(currentForecast);
+  const forecastDays = getForecastDays();
+  forecastDays.forEach((forecastDay, index) => {
+    updateForecastDate(forecastDay, currentForecast[index].dateTime);
+    updateMinTemperature(forecastDay, currentForecast[index].temp_min);
+    updateMaxTemperature(forecastDay, currentForecast[index].temp_max);
+    updateForecastIcon(forecastDay, currentForecast[index].icon);
+  });
 }
 
 export { updateWeather, updateForecast };
