@@ -38,15 +38,15 @@ interface Forecast {
   temp_max: string;
 }
 
-async function getWeather(cityName: string) {
-  const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${process.env.API_KEY}&units=metric`;
+async function getWeather(cityName: string, useMetric: boolean) {
+  const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${process.env.API_KEY}&units=${useMetric ? "metric" : "imperial"}`;
   const weatherResponse = await fetch(weatherUrl, { mode: "cors" });
   const weatherData = await weatherResponse.json();
   return weatherData;
 }
 
-async function getForecast(cityName: string) {
-  const forecastUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=${process.env.API_KEY}&units=metric`;
+async function getForecast(cityName: string, useMetric: boolean) {
+  const forecastUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=${process.env.API_KEY}&units=${useMetric ? "metric" : "imperial"}`;
   const forecastResponse = await fetch(forecastUrl, { mode: "cors" });
   const forecastData = await forecastResponse.json();
   return forecastData;
@@ -56,8 +56,8 @@ function setDate(date: Date): string {
   return date.toDateString().slice(0, -5).replace(" ", ", ");
 }
 
-async function updateWeather(cityName: string) {
-  const weatherData = await getWeather(cityName);
+async function updateWeather(cityName: string, useMetric:boolean = true) {
+  const weatherData = await getWeather(cityName, useMetric);
   const currentWeather: Weather = {
     name: weatherData.name,
     dateTime: setDate(new Date(weatherData.dt * 1000)),
@@ -73,10 +73,8 @@ async function updateWeather(cityName: string) {
     pressure: weatherData.main.pressure,
   };
   updateWeatherUI(currentWeather);
-}
 
-async function updateForecast(cityName: string) {
-  const forecastData = await getForecast(cityName);
+  const forecastData = await getForecast(cityName, useMetric);
   const currentForecast: Forecast[] = forecastData.list
     .filter((list: any, index: number) => index % 8 === 5)
     .map((list: any) => ({
@@ -110,4 +108,4 @@ function updateForecastUI(currentForecast: Forecast[]) {
   });
 }
 
-export { updateWeather, updateForecast };
+export { updateWeather };
