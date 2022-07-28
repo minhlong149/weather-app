@@ -3,8 +3,8 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const Dotenv = require("dotenv-webpack");
 
 module.exports = {
-  // mode: "development",
-  // devtool: "inline-source-map",
+  mode: "development",
+  devtool: "inline-source-map",
 
   entry: "./src/ts/index.ts",
   output: {

@@ -126,3 +126,63 @@
     }
   }
 }
+
+.search {
+  padding: 2em;
+
+  &__cancel {
+    text-align: right;
+  }
+
+  &__input {
+    display: flex;
+    justify-content: space-between;
+    gap: 1.5em;
+
+    margin: 2em 0;
+
+    .input__city {
+      display: flex;
+      align-items: center;
+      flex-grow: 1;
+      gap: 0.5em;
+
+      padding: 0 1em;
+      outline: 1px solid #ffffff;
+
+      input {
+        background: transparent;
+        width: 100%;
+      }
+    }
+
+    .input__submit {
+      button {
+        padding: 1em;
+        background-color: #3c47e9;
+      }
+    }
+
+    input,
+    button {
+      border: none;
+      outline: none;
+      margin: 0;
+      color: white;
+    }
+  }
+
+  &__result {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+
+    > * {
+      padding: 1em;
+
+      &:hover {
+        outline: 1px solid white;
+      }
+    }
+  }
+}
