@@ -25,3 +25,17 @@ unitsButtons.forEach((button) => {
     }
   });
 });
+const sidebarSearch = document.querySelector(".sidebar--search") as HTMLElement;
+const cancelSearchButton = sidebarSearch.querySelector(
+  ".search__cancel"
+) as HTMLButtonElement;
+cancelSearchButton.addEventListener("click", () => {
+  sidebarSearch.classList.add("search--hidden");
+});
+
+const searchButton = document.querySelector(
+  ".location__btn--search"
+) as HTMLButtonElement;
+searchButton.addEventListener("click", () => {
+  sidebarSearch.classList.remove("search--hidden");
+});

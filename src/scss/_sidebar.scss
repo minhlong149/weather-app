@@ -8,7 +8,7 @@
   &__location {
     display: flex;
     justify-content: space-between;
-    margin: 2em;
+    padding: 2em;
   }
 
   &__today {
@@ -25,7 +25,7 @@
     color: #88869d;
     font-size: 18px;
     text-align: center;
-    margin: 2em;
+    padding: 2em;
   }
 }
 
@@ -132,6 +132,9 @@
 
   &__cancel {
     text-align: right;
+    &:hover {
+      cursor: pointer;
+    }
   }
 
   &__input {
@@ -185,4 +188,14 @@
       }
     }
   }
+}
+
+.sidebar--search {
+  position: absolute;
+  height: 100vh;
+  width: 24vw;
+}
+
+.search--hidden {
+  display: none;
 }
