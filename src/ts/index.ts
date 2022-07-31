@@ -26,10 +26,20 @@ unitsButtons.forEach((button) => {
   });
 });
 const sidebarSearch = document.querySelector(".sidebar--search") as HTMLElement;
+
 const cancelSearchButton = sidebarSearch.querySelector(
   ".search__cancel"
 ) as HTMLButtonElement;
 cancelSearchButton.addEventListener("click", () => {
+  sidebarSearch.classList.add("search--hidden");
+});
+
+const inputSearchButton = sidebarSearch.querySelector(
+  ".input__btn"
+) as HTMLButtonElement;
+inputSearchButton.addEventListener("click", () => {
+  const newCity = sidebarSearch.querySelector(".city__value") as HTMLInputElement;
+  updateWeather(newCity.value);
   sidebarSearch.classList.add("search--hidden");
 });
 
